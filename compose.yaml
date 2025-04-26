@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  oracle-db:
+    image: gvenzl/oracle-free:latest
+    container_name: oracle-xe
+    environment:
+      - ORACLE_PASSWORD=root
+    ports:
+      - '1521:1521'
+	volumes:
+	     - oracle-data:/opt/oracle/oradata
+    healthcheck:
+      interval: 10s
+      timeout: 5s
+      retries: 30

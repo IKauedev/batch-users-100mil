@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:batch="http://www.springframework.org/schema/batch"
+       xsi:schemaLocation="
+           http://www.springframework.org/schema/beans
+           https://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/batch
+           https://www.springframework.org/schema/batch/spring-batch.xsd">
+
+    <batch:job id="simpleJob" restartable="true">
+        <batch:step id="simpleStep">
+            <batch:tasklet>
+                <batch:chunk reader="itemReader" processor="itemProcessor" writer="itemWriter" commit-interval="2"/>
+            </batch:tasklet>
+        </batch:step>
+    </batch:job>
+
+    <!-- Beans usados no Step -->
+    <bean id="itemReader" class="com.batch.jobusers.reader.SimpleItemReader"/>
+    <bean id="itemProcessor" class="com.batch.jobusers.processor.SimpleItemProcessor"/>
+    <bean id="itemWriter" class="com.batch.jobusers.writer.SimpleItemWriter"/>
+</beans>
