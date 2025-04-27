@@ -1,8 +1,6 @@
 package com.chanllenge.batch.application.dto;
 
-import lombok.AllArgsConstructor;
 
-@AllArgsConstructor
 public class TopCountryDTO {
     private String country;
     private Long superuser_count;

@@ -29,7 +29,6 @@ import com.chanllenge.batch.processor.UserProcessor;
 @Configuration
 @RequiredArgsConstructor
 public class UserJobConfig {
-
     private static final int CHUNK_SIZE = 1000; // Estratégia de maximizar throughput
     private static final int MAX_SKIP_LIMIT = 100; // Tolerância a falhas pontuais
     private static final int MAX_RETRY_LIMIT = 2; // Retentativas automáticas

@@ -19,52 +19,50 @@ import com.fasterxml.jackson.annotation.JsonRootName;
 @Table(name = "users")
 @JsonRootName(value = "usuarios")
 public class User {
-    @Id
+	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-    private UUID id;
-    
-    @JsonProperty(value = "nome")
+	private UUID id;
+
+	@JsonProperty(value = "nome")
 	private String name;
-    
-    @JsonProperty(value = "idade")
-    private Integer age;
-    
-    @JsonProperty(value = "score")
-    private Integer score;
-    
-    @JsonProperty(value = "ativo")
-    private Boolean active;
-    
-    @JsonProperty(value = "pais")
-    private String country;
-    
-    private String status;
+
+	@JsonProperty(value = "idade")
+	private Integer age;
+
+	@JsonProperty(value = "score")
+	private Integer score;
+
+	@JsonProperty(value = "ativo")
+	private Boolean active;
+
+	@JsonProperty(value = "pais")
+	private String country;
+
+	private String status;
 
 	@Embedded
 	@JsonProperty(value = "equipe")
-    @AttributeOverrides({
-        @AttributeOverride(name = "name", column = @Column(name = "team_name")),
-        @AttributeOverride(name = "leader", column = @Column(name = "team_leader"))
-    })
-    private Team team;
+	@AttributeOverrides({ @AttributeOverride(name = "name", column = @Column(name = "team_name")),
+			@AttributeOverride(name = "leader", column = @Column(name = "team_leader")) })
+	private Team team;
 
 	@JsonProperty(value = "logs")
-    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
-    @JoinColumn(name = "user_id")
-    private List<UserLog> logs;
-    
-    public UUID getId() {
+	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+	@JoinColumn(name = "user_id")
+	private List<UserLog> logs;
+
+	public UUID getId() {
 		return id;
 	}
 
 	public void setId(UUID id) {
 		this.id = id;
 	}
-	
+
 	public String getStatus() {
 		return status;
 	}
-	
+
 	public void setStatus(String status) {
 		this.status = status;
 	}

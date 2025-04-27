@@ -8,4 +8,5 @@ import org.springframework.stereotype.Repository;
 import com.chanllenge.batch.domain.entity.user.User;
 
 @Repository
-public interface UserRepository extends JpaRepository<User, UUID> {}
+public interface UserRepository extends JpaRepository<User, UUID> {
+}
