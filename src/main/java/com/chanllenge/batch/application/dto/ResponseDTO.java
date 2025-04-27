@@ -11,23 +11,23 @@ public class ResponseDTO {
 	public int getStatus() {
 		return status;
 	}
-	
+
 	public void setStatus(int status) {
 		this.status = status;
 	}
-	
+
 	public Boolean getValid_json() {
 		return valid_json;
 	}
-	
+
 	public void setValid_json(Boolean valid_json) {
 		this.valid_json = valid_json;
 	}
-	
+
 	public Long getResponse_time_ms() {
 		return response_time_ms;
 	}
-	
+
 	public void setResponse_time_ms(Long response_time_ms) {
 		this.response_time_ms = response_time_ms;
 	}
