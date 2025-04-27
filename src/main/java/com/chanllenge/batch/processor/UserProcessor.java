@@ -2,7 +2,7 @@ package com.chanllenge.batch.processor;
 
 import org.springframework.batch.item.ItemProcessor;
 
-import com.chanllenge.batch.entity.user.User;
+import com.chanllenge.batch.domain.entity.user.User;
 
 public class UserProcessor implements ItemProcessor<User, User> {
 	@Override

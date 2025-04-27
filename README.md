@@ -1,11 +1,7 @@
-Claro!  
-Vou redesenhar esse desafio técnico, elevando a sua descrição a um **nível corporativo**, **estruturado** e **visionário** — adequado a ambientes de alta performance, como consultorias, tech leads ou seleções de grandes players de mercado.
 
----
+# **Desafio Técnico: Performance e Análise de Dados via API**
 
-# 📚 **Desafio Técnico: Performance e Análise de Dados via API**
-
-## 🎯 **Objetivo**
+## **Objetivo**
 Desenvolver uma **API altamente performática** capaz de:
 - **Receber** e **armazenar** um volume massivo de dados (100.000 usuários).
 - **Analisar** esses dados em tempo real através de **endpoints estratégicos**.
@@ -16,9 +12,8 @@ O desafio avaliará:
 - Competência em **design de API performática**.
 - Habilidade de documentar, validar e auditar a entrega.
 
----
 
-## 🗂️ **Especificação do JSON de Entrada**
+## **Especificação do JSON de Entrada**
 O payload a ser processado terá a seguinte estrutura para cada usuário:
 
 ```json
@@ -42,9 +37,7 @@ O payload a ser processado terá a seguinte estrutura para cada usuário:
 }
 ```
 
----
-
-## 🚀 **Endpoints Obrigatórios**
+## **Endpoints Obrigatórios**
 
 | Método | Rota | Descrição |
 |:-------|:-----|:----------|
@@ -55,9 +48,8 @@ O payload a ser processado terá a seguinte estrutura para cada usuário:
 | GET | `/active-users-per-day` | Conta logins por `date`. Suporta filtro por `min` (ex.: `?min=3000` para dias com pelo menos 3000 logins). |
 | GET | `/evaluation` | Autoavaliação da API: verifica status 200, tempo de resposta, validade do JSON para os principais endpoints. Retorna um relatório de avaliação. |
 
----
 
-## 📈 **Requisitos Técnicos**
+## **Requisitos Técnicos**
 
 - **Tempo de resposta < 1 segundo** em todos os endpoints (considerando memória local).
 - Todos os endpoints devem obrigatoriamente retornar:
@@ -66,9 +58,8 @@ O payload a ser processado terá a seguinte estrutura para cada usuário:
 - Código **modular**, **escalável** e **documentado**.
 - Framework/language de livre escolha (preferencialmente estruturas que facilitem alta performance).
 
----
 
-## 📋 **Detalhes Adicionais**
+## **Detalhes Adicionais**
 
 ### POST `/users`
 - Aceita o payload contendo **todos** os usuários.
@@ -76,7 +67,6 @@ O payload a ser processado terá a seguinte estrutura para cada usuário:
 - Persistência apenas **em memória** (não usar bancos de dados externos).
 - Aceita cargas tanto de 1.000 quanto de 100.000 usuários.
 
----
 
 ### GET `/superusers`
 - Filtro dinâmico aplicado:
@@ -86,7 +76,6 @@ O payload a ser processado terá a seguinte estrutura para cada usuário:
   - Quantidade de superusuários encontrados.
   - Tempo de execução da consulta.
 
----
 
 ### GET `/top-countries`
 - Baseado no resultado de `/superusers`.
@@ -95,7 +84,6 @@ O payload a ser processado terá a seguinte estrutura para cada usuário:
   - Quantidade de superusuários.
 - Ordenar do maior para o menor e limitar a 5 resultados.
 
----
 
 ### GET `/team-insights`
 Para cada equipe (`team.name`), calcular:
@@ -104,14 +92,12 @@ Para cada equipe (`team.name`), calcular:
 - Total de projetos concluídos (`completed = true`).
 - Percentual de membros ativos (`active = true`).
 
----
 
 ### GET `/active-users-per-day`
 - Baseado nos `logs` de ação `login`.
 - Permitir filtro opcional via query param `?min=valor`.
 - Exemplo: `/active-users-per-day?min=3000` retorna somente datas com mais de 3000 logins.
 
----
 
 ### GET `/evaluation`
 Executa testes automatizados nos endpoints:
@@ -131,9 +117,7 @@ Exemplo de resposta:
 }
 ```
 
----
-
-## 🎖️ **Critérios de Avaliação**
+## **Critérios de Avaliação**
 | Critério | Peso |
 |:---------|:-----|
 | Código limpo, modular e documentado | Alto |
@@ -142,33 +126,26 @@ Exemplo de resposta:
 | Qualidade e estrutura da documentação | Bônus |
 | Estratégia de avaliação automática no `/evaluation` | Bônus extra |
 
----
-
-# 🔥 Dicas para Brilhar no Desafio
+# Dicas para Brilhar no Desafio
 
 - Use estruturas de dados otimizadas (e.g., HashMap, Streams paralelos, Cache local).
 - Trabalhe com Streams e lambdas se estiver usando Java, ou FastAPI se Python.
 - Sempre medir o tempo de início e fim no controller para calcular `processing_time_ms`.
 - Garanta que o sistema suporte múltiplas requisições simultâneas (*thread-safe*).
 
----
 
-# 📌 Arquivos de Entrada para Testes
+# Arquivos de Entrada para Testes
 
 - [Download JSON com 100.000 usuários](#) (simulado)
 - [Download JSON com 1.000 usuários para testes rápidos](#) (simulado)
 
----
 
-# ✨ **Entrega bônus sugerida**
+# **Entrega bônus sugerida**
 - Documentar API via Swagger/OpenAPI.
 - Fornecer um arquivo README.md explicando estrutura, decisão de arquitetura e como executar localmente.
 - Incluir scripts prontos de testes.
 
----
 
-# 📢Observação final
+# Observação final
 
 > "O verdadeiro diferencial não será apenas construir a API, mas **pensar em performance, escalabilidade, governança de dados e experiência de consumo** como um todo."  
-
----
