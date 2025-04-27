@@ -1,8 +1,3 @@
-Claro!  
-Vou redesenhar esse desafio técnico, elevando a sua descrição a um **nível corporativo**, **estruturado** e **visionário** — adequado a ambientes de alta performance, como consultorias, tech leads ou seleções de grandes players de mercado.
-
----
-
 # 📚 **Desafio Técnico: Performance e Análise de Dados via API**
 
 ## 🎯 **Objetivo**
